@@ -1,7 +1,7 @@
 FROM eboraas/apache-php
 MAINTAINER Weuder Martins <weuderrr@gmail.com>
 
-RUN apt-get update && apt-get -y install git curl php5 php5-mcrypt php5-json && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y install git mysql-client curl php5 php5-mcrypt php5-mysql php5-json && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN /usr/bin/curl -sS https://getcomposer.org/installer |/usr/bin/php
 RUN /bin/mv composer.phar /usr/local/bin/composer
